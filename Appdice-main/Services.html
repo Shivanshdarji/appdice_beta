@@ -1,0 +1,202 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+    body {
+      font-family: 'Anton', sans-serif;
+      padding-top: 80px; /* Add padding to account for fixed header */
+    }
+    /* Header styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #051650;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 200, 87, 0.2);
+    }
+    /* Microanimation for header links */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+      color: #ffffff;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #ffffff;
+      transition: width 0.3s ease, left 0.3s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover {
+      color: #cccccc;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    .logo-font {
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.15em;
+    }
+    /* Mobile menu styles */
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        background-color: #051650;
+        padding: 1rem;
+        z-index: 50;
+        border-left: 1px solid #FFC857;
+        border-bottom: 1px solid #FFC857;
+        border-radius: 0 0 0 8px;
+        min-width: 200px;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      .mobile-menu a {
+        padding: 0.75rem 1.5rem;
+        text-align: right;
+      }
+      .mobile-menu a:hover {
+        background-color: rgba(255, 200, 87, 0.1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#051650] font-sans">
+  <!-- Header -->
+  <header class="flex justify-between items-center py-4 md:py-8 px-4 md:px-8 max-w-full">
+    <h1 class="text-2xl md:text-4xl font-extrabold cursor-default select-none logo-font tracking-tight ml-0">
+      <span class="text-[#FFC857]">App</span><span class="text-white">Dice</span>
+    </h1>
+    <nav class="space-x-6 hidden md:flex mr-6">
+      <a class="nav-link text-lg font-semibold uppercase tracking-wide" href="index (1).html">
+        Home
+      </a>
+      <a class="nav-link text-lg font-semibold uppercase tracking-wide" href="About Us.html">
+        About Us
+      </a>
+      <a class="nav-link text-lg font-semibold uppercase tracking-wide active" href="Services.html">
+        Services
+      </a>
+      <a class="nav-link text-lg font-semibold uppercase tracking-wide" href="podcast.html">
+        Podcast
+      </a>
+    </nav>
+    <!-- Mobile menu button -->
+    <button class="md:hidden text-white text-2xl" id="mobileMenuButton">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+  <!-- Mobile menu -->
+  <div class="mobile-menu md:hidden" id="mobileMenu">
+    <a class="nav-link text-lg font-semibold uppercase tracking-wide block" href="index (1).html">
+      Home
+    </a>
+    <a class="nav-link text-lg font-semibold uppercase tracking-wide block" href="About Us.html">
+      About Us
+    </a>
+    <a class="nav-link text-lg font-semibold uppercase tracking-wide block" href="Services.html">
+      Services
+    </a>
+    <a class="nav-link text-lg font-semibold uppercase tracking-wide block" href="podcast.html">
+      Podcast
+    </a>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-16">
+    <h1
+      class="text-[48px] md:text-[96px] leading-[1] font-['Anton'] font-extrabold text-white max-w-[400px]"
+    >
+      OUR<br />SERVICES
+    </h1>
+    <p class="text-white text-base md:text-lg max-w-xl mt-4 md:mt-6 font-semibold">
+      Everything. Everywhere. All At Once.
+    </p>
+    <button
+      class="mt-8 md:mt-12 inline-flex items-center gap-2 border border-white rounded-full px-6 md:px-8 py-3 md:py-4 text-white font-semibold text-sm font-['Anton'] hover:bg-white hover:text-[#051650] transition"
+      type="button"
+    >
+      coustomised services <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="mt-12 md:mt-20 max-w-4xl">
+      <div
+        class="border-t border-white pt-4 md:pt-6 pb-4 md:pb-6 text-white font-semibold font-['Anton'] text-base md:text-lg select-none"
+      >
+        <div
+          id="faq-header"
+          class="flex justify-between items-center cursor-pointer"
+          onclick="toggleFaq()"
+          role="button"
+          aria-expanded="false"
+          aria-controls="faq-content"
+          tabindex="0"
+          onkeydown="if(event.key==='Enter' || event.key===' ') toggleFaq()"
+        >
+          <span>chatAi</span>
+          <span id="faq-icon" class="text-2xl md:text-3xl leading-none select-none">+</span>
+        </div>
+        <div id="faq-content" class="mt-2 text-white font-normal text-sm md:text-base max-w-xl hidden">
+          <p>
+            Personalised , Psychologically Trained Chatbots For Converting Your Leads Into Coustomers & Coustomers To Loyality.
+          </p>
+          <a
+            href="https://chatai-main.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-4 px-4 py-2 border border-white rounded text-white text-sm font-['Anton'] hover:bg-white hover:text-[#051650] transition"
+          >
+            Visit chatAi
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq() {
+      const content = document.getElementById('faq-content');
+      const icon = document.getElementById('faq-icon');
+      const header = document.getElementById('faq-header');
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.textContent = '−';
+        header.setAttribute('aria-expanded', 'true');
+      } else {
+        content.classList.add('hidden');
+        icon.textContent = '+';
+        header.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
